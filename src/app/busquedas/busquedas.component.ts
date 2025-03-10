@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../servicios/api.service';
 
 @Component({
   selector: 'app-busquedas',
@@ -6,6 +7,31 @@ import { Component } from '@angular/core';
   templateUrl: './busquedas.component.html',
   styleUrl: './busquedas.component.css'
 })
-export class BusquedasComponent {
+export class BusquedasComponent implements OnInit {
+  partidos: any[] = [];
+
+  constructor(private apiService: ApiService) {}
+
+
+  ngOnInit(): void {
+
+    this.apiService.getPartidosEuro().subscribe(
+
+      (data) => {
+
+        this.partidos = data.matches;
+
+      },
+      (error) => {
+
+        console.error('Error al obtener los partidos:', error);
+      }
+    );
+
+
+  }
+
+
+
 
 }
