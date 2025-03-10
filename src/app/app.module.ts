@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { BusquedasComponent } from './busquedas/busquedas.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina-no-encontrada404.component';
@@ -19,7 +19,8 @@ import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

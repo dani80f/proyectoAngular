@@ -15,6 +15,7 @@ export class BusquedasComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log('Inicializando BusquedasComponent');
     this.apiService.getPartidosEuro().subscribe(
 
       (data) => {
