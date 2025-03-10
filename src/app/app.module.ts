@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BusquedasComponent } from './busquedas/busquedas.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina-no-encontrada404.component';
+import { PipePipe } from './pipes/pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina
     BienvenidaComponent,
     BusquedasComponent,
     AcercaDeComponent,
-    PaginaNoEncontrada404Component
+    PaginaNoEncontrada404Component,
+    PipePipe
   ],
   imports: [
     BrowserModule,
