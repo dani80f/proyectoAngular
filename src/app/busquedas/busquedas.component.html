@@ -1,6 +1,9 @@
 <h2>Partidos de la Eurocopa</h2>
 <ul>
   <li *ngFor="let partido of partidos">
-    {{ partido.homeTeam.name }} vs {{ partido.awayTeam.name }} - {{ partido.utcDate | date: 'short' }}
+
+    {{ partido.homeTeam.name | pipe }} vs {{ partido.awayTeam.name | pipe }} - {{ partido.utcDate | date: 'short' }}
   </li>
+
+
 </ul>
