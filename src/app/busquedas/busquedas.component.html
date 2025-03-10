@@ -1,9 +1,27 @@
 <h2>Partidos de la Eurocopa</h2>
+
+
+
+<select [(ngModel)]="seleccionElegida">
+
+  <option value="">Todas las selecciones</option>
+  <option *ngFor="let seleccion of selecciones" [value]="seleccion">
+    {{ seleccion }}
+
+
+  </option>
+</select>
+
 <ul>
-  <li *ngFor="let partido of partidos">
 
-    {{ partido.homeTeam.name | pipe }} vs {{ partido.awayTeam.name | pipe }} - {{ partido.utcDate | date: 'short' }}
-  </li>
+  <ng-container *ngFor="let partido of partidos">
+
+    <li *ngIf="!seleccionElegida || partido.homeTeam.name === seleccionElegida || partido.awayTeam.name === seleccionElegida">
+
+      {{ partido.homeTeam.name | pipe }} vs {{ partido.awayTeam.name | pipe }} - {{ partido.utcDate | date: 'short' }}
+
+    </li>
 
 
+  </ng-container>
 </ul>

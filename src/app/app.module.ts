@@ -9,6 +9,7 @@ import { BusquedasComponent } from './busquedas/busquedas.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina-no-encontrada404.component';
 import { PipePipe } from './pipes/pipe.pipe';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PipePipe } from './pipes/pipe.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

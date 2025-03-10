@@ -9,6 +9,11 @@ import {ApiService} from '../servicios/api.service';
 })
 export class BusquedasComponent implements OnInit {
   partidos: any[] = [];
+  selecciones: string[] = [
+    'Spain', 'Italy', 'France', 'Germany', 'Portugal', 'England', 'Netherlands', 'Belgium', 'Croatia', 'Switzerland'
+  ];
+
+  seleccionElegida: string = '';
 
   constructor(private apiService: ApiService) {}
 
