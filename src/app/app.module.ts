@@ -10,6 +10,7 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina-no-encontrada404.component';
 import { PipePipe } from './pipes/pipe.pipe';
 import {FormsModule} from '@angular/forms';
+import { ProductosComponent } from './productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule} from '@angular/forms';
     BusquedasComponent,
     AcercaDeComponent,
     PaginaNoEncontrada404Component,
-    PipePipe
+    PipePipe,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
