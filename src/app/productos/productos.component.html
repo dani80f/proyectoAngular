@@ -1,1 +1,37 @@
-<p>productos works!</p>
+<h2>Lista de Productos</h2>
+
+<div *ngIf="productos.length === 0">
+
+  <p>No hay productos disponibles.</p>
+
+</div>
+
+<div>
+  <h3>Crear Nuevo Producto</h3>
+  <input [(ngModel)]="nuevoProducto.nombre" placeholder="Nombre" />
+  <input [(ngModel)]="nuevoProducto.precio" type="number" placeholder="Precio" />
+  <input [(ngModel)]="nuevoProducto.stock" type="number" placeholder="Stock" />
+  <button (click)="crearProducto()">Crear</button>
+</div>
+
+<div *ngIf="productoSeleccionado">
+
+  <h3>Editar Producto</h3>
+  <input [(ngModel)]="productoSeleccionado.nombre" placeholder="Nombre" />
+  <input [(ngModel)]="productoSeleccionado.precio" type="number" placeholder="Precio" />
+  <input [(ngModel)]="productoSeleccionado.stock" type="number" placeholder="Stock" />
+  <button (click)="actualizarProducto()">Actualizar</button>
+
+</div>
+
+
+<ul *ngIf="productos.length > 0">
+  <li *ngFor="let producto of productos">
+
+    {{ producto.nombre | pipe }} - Precio: {{ producto.precio  }} - Stock: {{ producto.stock }}
+
+    <button (click)="productoSeleccionado = producto">Editar</button>
+    <button (click)="eliminarProducto(producto.id)">Eliminar</button>
+
+  </li>
+</ul>
